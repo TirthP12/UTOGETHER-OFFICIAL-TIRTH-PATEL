@@ -43,7 +43,7 @@ struct ContentView: View {
                 .foregroundColor(Color.navy)
                 
                 Spacer()
-                .frame(height: 15)            }
+                            }
         }
         Text("Powered by Tirth Patel")
         
