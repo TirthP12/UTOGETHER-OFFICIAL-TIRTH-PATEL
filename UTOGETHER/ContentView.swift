@@ -47,7 +47,7 @@ struct ContentView: View {
         }
         Text("Powered by Tirth Patel")
         
-                            .font(.system(size: 10)) // Adjust the font size here
+                            .font(.system(size: 10)) 
                             .foregroundColor(Color.lightBlue)
                     }
                    
