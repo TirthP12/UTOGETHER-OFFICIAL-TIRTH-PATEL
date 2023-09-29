@@ -43,7 +43,7 @@ struct ContentView: View {
                 .foregroundColor(Color.navy)
                 
                 Spacer()
-                            }
+                      }
         }
         Text("Powered by Tirth Patel")
         
