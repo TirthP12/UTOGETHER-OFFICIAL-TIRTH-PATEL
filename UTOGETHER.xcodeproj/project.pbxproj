@@ -33,6 +33,8 @@
 		3E00D4EE2AB368170024DA16 /* ThreeB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00D4ED2AB368170024DA16 /* ThreeB.swift */; };
 		3E00D4F02AB3681C0024DA16 /* ThreeC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00D4EF2AB3681C0024DA16 /* ThreeC.swift */; };
 		3E00D4F22AB368230024DA16 /* TwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00D4F12AB368230024DA16 /* TwoView.swift */; };
+		3EFC15C32BE3E79A00BF3806 /* ConnectwithOthers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC15C22BE3E79A00BF3806 /* ConnectwithOthers.swift */; };
+		3EFC15C52BE3F3C700BF3806 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC15C42BE3F3C700BF3806 /* Register.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		3E00D4ED2AB368170024DA16 /* ThreeB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeB.swift; sourceTree = "<group>"; };
 		3E00D4EF2AB3681C0024DA16 /* ThreeC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeC.swift; sourceTree = "<group>"; };
 		3E00D4F12AB368230024DA16 /* TwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoView.swift; sourceTree = "<group>"; };
+		3EFC15C22BE3E79A00BF3806 /* ConnectwithOthers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectwithOthers.swift; sourceTree = "<group>"; };
+		3EFC15C42BE3F3C700BF3806 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,7 @@
 			children = (
 				3E00D4A32AB366F10024DA16 /* UTOGETHERApp.swift */,
 				3E00D4D92AB367BB0024DA16 /* nAvy Day.swift */,
+				3EFC15C42BE3F3C700BF3806 /* Register.swift */,
 				3E00D4ED2AB368170024DA16 /* ThreeB.swift */,
 				3E00D4E12AB367EE0024DA16 /* SevenA.swift */,
 				3E00D4E32AB367F20024DA16 /* SevenB.swift */,
@@ -148,6 +153,7 @@
 				3E00D4CD2AB367720024DA16 /* BeforeA.swift */,
 				3E00D4CF2AB367850024DA16 /* BeforeB.swift */,
 				3E00D4DD2AB367C90024DA16 /* File.swift */,
+				3EFC15C22BE3E79A00BF3806 /* ConnectwithOthers.swift */,
 				3E00D4DB2AB367C10024DA16 /* One.swift */,
 				3E00D4D12AB367900024DA16 /* columBia Day.swift */,
 				3E00D4D32AB3679B0024DA16 /* EightView.swift */,
@@ -324,11 +330,13 @@
 				3E00D4F22AB368230024DA16 /* TwoView.swift in Sources */,
 				3E00D4E62AB367F90024DA16 /* SevenC.swift in Sources */,
 				3E00D4E82AB368010024DA16 /* SevenView.swift in Sources */,
+				3EFC15C52BE3F3C700BF3806 /* Register.swift in Sources */,
 				3E00D4CE2AB367720024DA16 /* BeforeA.swift in Sources */,
 				3E00D4F02AB3681C0024DA16 /* ThreeC.swift in Sources */,
 				3E00D4D22AB367900024DA16 /* columBia Day.swift in Sources */,
 				3E00D4D02AB367850024DA16 /* BeforeB.swift in Sources */,
 				3E00D4A62AB366F10024DA16 /* ContentView.swift in Sources */,
+				3EFC15C32BE3E79A00BF3806 /* ConnectwithOthers.swift in Sources */,
 				3E00D4DC2AB367C10024DA16 /* One.swift in Sources */,
 				3E00D4E42AB367F20024DA16 /* SevenB.swift in Sources */,
 				3E00D4DE2AB367C90024DA16 /* File.swift in Sources */,

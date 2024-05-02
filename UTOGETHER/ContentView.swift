@@ -35,6 +35,17 @@ struct ContentView: View {
                                 
                             }
                             .padding()
+                            NavigationLink(destination: ConnectwithOthers()) {
+                                Text("ConnectU")
+                                    .padding()
+                                    .background(Color.lightBlue)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(20)
+                                    .frame(width: 500)
+                                Spacer()
+                                
+                            }
+                            .padding()
                             
                         }
                     }
