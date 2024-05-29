@@ -25,7 +25,7 @@ struct ContentView: View {
                                 .foregroundColor(.black)
                             
                             NavigationLink(destination: ProspectDays()) {
-                                Text("Login")
+                                Text("Prospect HS Tutors")
                                     .padding()
                                     .background(Color.lightBlue)
                                     .foregroundColor(.white)
@@ -36,7 +36,7 @@ struct ContentView: View {
                             }
                             .padding()
                             NavigationLink(destination: ConnectwithOthers()) {
-                                Text("ConnectU")
+                                Text("ConnectU with Private Tutors")
                                     .padding()
                                     .background(Color.lightBlue)
                                     .foregroundColor(.white)

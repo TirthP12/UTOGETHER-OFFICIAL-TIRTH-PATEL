@@ -1,58 +1,55 @@
 import SwiftUI
+import UIKit // Added to import UIApplication
 
 struct Tutor: Identifiable {
     let id = UUID()
     var name: String
     var location: String
     var bio: String
+    var imageName: String
 }
 
 struct ConnectwithOthers: View {
     @State private var searchText = ""
+    @State private var isDarkMode = false
     
     let tutors = [
-        Tutor(name: "Apple", location: "401 Michigan Ave, Chicago, IL 60611", bio: "Expert in Swift and iOS development."),
-        Tutor(name: "Jane Smith", location: "456 Elm St, Mount Prospect", bio: "Specializes in Mathematics and Physics."),
-        Tutor(name: "David Johnson", location: "789 Oak St, Mount Prospect", bio: "Experienced in Chemistry and Biology."),
-        Tutor(name: "Tirth Patel", location: "789 Oak St, Mount Prospect", bio: "Experienced in Precalculus."),
-        Tutor(name: "Hari Patel", location: "811 Kensington Rd, Mount Prospect", bio: "Algebra I tutor!."),
+        Tutor(name: "Albert Kim", location: "403 Kensington Rd, Mount Prospect, Illinois, 60056", bio: "AP CALC BC Tutor & Digital SAT!", imageName: "albert"),
+        Tutor(name: "Tirth Patel", location: "10 Dempster St, Des Plaines, Illinois 60016", bio: "Experienced in Precalculus.", imageName: "tirth"),
+        Tutor(name: "Apple", location: "401 Michigan Ave, Chicago, IL 60611", bio: "Expert in Swift and iOS development.", imageName: "profiles"),
+        Tutor(name: "Hari Patel", location: "811 Kensington Rd, Mount Prospect, Illinois 60056", bio: "Algebra I tutor!", imageName: "profiles"),
+        
     ]
     
-    
     var filteredTutors: [Tutor] {
-        if searchText.isEmpty {
-            return tutors
-        } else {
-            return tutors.filter { $0.name.contains(searchText) || $0.location.contains(searchText) }
+        var filtered = tutors
+        if !searchText.isEmpty {
+            filtered = filtered.filter { $0.name.localizedCaseInsensitiveContains(searchText) || $0.location.localizedCaseInsensitiveContains(searchText) }
         }
+        return filtered
     }
     
     var body: some View {
         NavigationView {
             VStack(alignment: .leading) {
                 Text("ConnectU")
-                    .font(.system(size: 34, weight: .bold, design: .default))
-                    .foregroundColor(.primary)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(isDarkMode ? .white : .blue)
                     .padding(.top, 20)
                     .padding(.leading, 20)
                 
-                SearchBar(text: $searchText)
+                
+                TextField("Search", text: $searchText)
+                    .padding(.horizontal, 20)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 List(filteredTutors) { tutor in
                     NavigationLink(destination: TutorDetailView(tutor: tutor)) {
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text(tutor.name)
-                                .font(.system(size: 24, weight: .medium, design: .default))
-                                .foregroundColor(.primary)
-                            Text(tutor.location)
-                                .font(.system(size: 18, weight: .regular, design: .default))
-                                .foregroundColor(.secondary)
-                        }
-                        .padding(.vertical, 10)
+                        TutorRowView(tutor: tutor)
                     }
                 }
-                .listStyle(InsetGroupedListStyle())
-                .padding(.horizontal, 10)
+                .listStyle(GroupedListStyle())
                 
                 Spacer()
                 
@@ -62,18 +59,31 @@ struct ConnectwithOthers: View {
                     }
                 }) {
                     Text("Register as a Tutor")
-                        .font(.system(size: 18, weight: .semibold, design: .default))
+                        .font(.headline)
+                        .fontWeight(.semibold)
                         .foregroundColor(.white)
-                        .padding(.vertical, 12)
-                        .padding(.horizontal, 20)
+                        .padding()
+                        .frame(maxWidth: .infinity)
                         .background(Color.blue)
-                        .cornerRadius(8)
-                        .frame(maxWidth: .infinity, alignment: .center)
+                        .cornerRadius(10)
                 }
-                .padding(.vertical, 20)
                 .padding(.horizontal, 20)
+                .padding(.bottom, 20)
             }
+            .background(isDarkMode ? Color.black : Color.white)
+            .navigationBarItems(trailing:
+                Button(action: {
+                    isDarkMode.toggle()
+                }) {
+                    Image(systemName: isDarkMode ? "moon.fill" : "sun.max.fill")
+                        .foregroundColor(isDarkMode ? .white : .blue)
+                        .font(.headline)
+                        .padding()
+                }
+            )
         }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
     }
 }
 
@@ -81,74 +91,85 @@ struct TutorDetailView: View {
     var tutor: Tutor
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) {
-            Text(tutor.name)
-                .font(.system(size: 34, weight: .bold, design: .default))
-                .foregroundColor(.primary)
+        VStack(alignment: .center, spacing: 20) {
+            Image(tutor.imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 200, height: 200)
+                .cornerRadius(10)
             
-            Text(tutor.location)
-                .font(.system(size: 18, weight: .regular, design: .default))
-                .foregroundColor(.secondary)
-            
+            VStack(alignment: .leading, spacing: 10) {
+                Text(tutor.name)
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(.blue)
+                Text(tutor.location)
+                    .font(.body)
+                    .foregroundColor(.secondary)
+                Text(tutor.bio)
+                    .font(.body)
+                    .foregroundColor(.primary)
+                Button(action: {
+                    if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSczpijPuk-ezywcgL-dBe-tYrSrPFTl8IGpbo_7K3ph_I-vkg/viewform?usp=sf_link") {
+                        UIApplication.shared.open(url)
+                    }
+                }) {
+                    Text("Book")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                }
+                .padding(.top, 10)
+            }
+            .padding()
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitle(tutor.name)
+    }
+}
+
+struct TutorRowView: View {
+    var tutor: Tutor
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            HStack {
+                Image(tutor.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 50, height: 50)
+                    .cornerRadius(25)
+                
+                VStack(alignment: .leading) {
+                    Text(tutor.name)
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.primary)
+                    Text(tutor.location)
+                        .font(.body)
+                        .foregroundColor(.secondary)
+                }
+            }
             Text(tutor.bio)
-                .font(.system(size: 18, weight: .regular, design: .default))
+                .font(.body)
                 .foregroundColor(.primary)
-            
             Button(action: {
                 if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSczpijPuk-ezywcgL-dBe-tYrSrPFTl8IGpbo_7K3ph_I-vkg/viewform?usp=sf_link") {
                     UIApplication.shared.open(url)
                 }
             }) {
-                Text("Book Tutor")
-                    .font(.system(size: 18, weight: .semibold, design: .default))
+                Text("Book")
+                    .font(.headline)
+                    .fontWeight(.semibold)
                     .foregroundColor(.white)
-                    .padding(.vertical, 12)
-                    .padding(.horizontal, 20)
+                    .padding()
                     .background(Color.blue)
-                    .cornerRadius(8)
+                    .cornerRadius(10)
             }
-            .buttonStyle(PlainButtonStyle())
-            
-            Spacer()
+            .padding(.top, 10)
         }
-        .padding()
-        .navigationTitle("Tutor Details")
-    }
-}
-
-struct SearchBar: UIViewRepresentable {
-    @Binding var text: String
-    
-    class Coordinator: NSObject, UISearchBarDelegate {
-        @Binding var text: String
-        
-        init(text: Binding<String>) {
-            _text = text
-        }
-        
-        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-            text = searchText
-        }
-    }
-    
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(text: $text)
-    }
-    
-    func makeUIView(context: UIViewRepresentableContext<SearchBar>) -> UISearchBar {
-        let searchBar = UISearchBar(frame: .zero)
-        searchBar.delegate = context.coordinator
-        searchBar.placeholder = "Search tutors"
-        return searchBar
-    }
-    
-    func updateUIView(_ uiView: UISearchBar, context: UIViewRepresentableContext<SearchBar>) {
-        uiView.text = text
-    }
-}
-
-struct ConnectwithOthers_Previews: PreviewProvider {
-    static var previews: some View {
-        ConnectwithOthers()
     }
 }

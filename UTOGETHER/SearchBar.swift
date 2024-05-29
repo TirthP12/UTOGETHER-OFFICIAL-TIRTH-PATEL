@@ -7,12 +7,31 @@
 
 import SwiftUI
 
+
 struct SearchBar: View {
+    @Binding var text: String
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            TextField("Search", text: $text)
+                .padding(7)
+                .padding(.horizontal, 25)
+                .background(Color(.systemGray6))
+                .cornerRadius(8)
+                .padding(.horizontal, 10)
+                .onTapGesture {
+                  
+                    text = ""
+                }
+
+            Button(action: { ""
+            }) {
+                Image(systemName: "xmark.circle.fill")
+                    .foregroundColor(.gray)
+                    .padding(.trailing, 10)
+            }
+        }
     }
 }
 
-#Preview {
-    SearchBar()
-}
+

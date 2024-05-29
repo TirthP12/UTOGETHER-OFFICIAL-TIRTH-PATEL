@@ -33,6 +33,7 @@
 		3E00D4EE2AB368170024DA16 /* ThreeB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00D4ED2AB368170024DA16 /* ThreeB.swift */; };
 		3E00D4F02AB3681C0024DA16 /* ThreeC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00D4EF2AB3681C0024DA16 /* ThreeC.swift */; };
 		3E00D4F22AB368230024DA16 /* TwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E00D4F12AB368230024DA16 /* TwoView.swift */; };
+		3E37C4842BFBAB830069CCA5 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E37C4832BFBAB830069CCA5 /* SearchBar.swift */; };
 		3EFC15C32BE3E79A00BF3806 /* ConnectwithOthers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC15C22BE3E79A00BF3806 /* ConnectwithOthers.swift */; };
 		3EFC15C52BE3F3C700BF3806 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFC15C42BE3F3C700BF3806 /* Register.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		3E00D4ED2AB368170024DA16 /* ThreeB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeB.swift; sourceTree = "<group>"; };
 		3E00D4EF2AB3681C0024DA16 /* ThreeC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeC.swift; sourceTree = "<group>"; };
 		3E00D4F12AB368230024DA16 /* TwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoView.swift; sourceTree = "<group>"; };
+		3E37C4832BFBAB830069CCA5 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		3EFC15C22BE3E79A00BF3806 /* ConnectwithOthers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectwithOthers.swift; sourceTree = "<group>"; };
 		3EFC15C42BE3F3C700BF3806 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +144,7 @@
 				3E00D4ED2AB368170024DA16 /* ThreeB.swift */,
 				3E00D4E12AB367EE0024DA16 /* SevenA.swift */,
 				3E00D4E32AB367F20024DA16 /* SevenB.swift */,
+				3E37C4832BFBAB830069CCA5 /* SearchBar.swift */,
 				3E00D4F12AB368230024DA16 /* TwoView.swift */,
 				3E00D4EF2AB3681C0024DA16 /* ThreeC.swift */,
 				3E00D4E72AB368010024DA16 /* SevenView.swift */,
@@ -325,6 +328,7 @@
 				3E00D4E22AB367EE0024DA16 /* SevenA.swift in Sources */,
 				3E00D4D42AB3679B0024DA16 /* EightView.swift in Sources */,
 				3E00D4D62AB367A50024DA16 /* FiveView.swift in Sources */,
+				3E37C4842BFBAB830069CCA5 /* SearchBar.swift in Sources */,
 				3E00D4EE2AB368170024DA16 /* ThreeB.swift in Sources */,
 				3E00D4DA2AB367BB0024DA16 /* nAvy Day.swift in Sources */,
 				3E00D4F22AB368230024DA16 /* TwoView.swift in Sources */,
